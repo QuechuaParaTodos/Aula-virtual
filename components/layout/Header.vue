@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="auth">
-        <button class="btn">Iniciar Sesión</button>
+        <v-btn outlined :class="`${btnColor} rounded-lg mx-2`" dark  @click="login">Iniciar Sesión</v-btn>
         <button class="btn btn-white">Matricúlate</button>
         <div class="bars-mobile">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -34,7 +34,14 @@
 
 <script>
 export default {
-
+  data: () => ({
+      btnColor :'purple'
+    }),
+  methods: {
+    login(){
+      this.btnColor = this.btnColor == 'pink' ? 'purple' : 'pink'
+    }
+  }
 }
 </script>
 
