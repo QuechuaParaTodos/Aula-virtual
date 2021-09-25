@@ -62,7 +62,7 @@ header{
         text-decoration: none;
         border-bottom: 2px solid transparent;
         transition: $--transition;
-        margin: 0 .3rem;
+        margin: 0 .5rem;
         &:hover{
           color: $--clr--primary;
           border-bottom: 2px solid $--clr--primary;
