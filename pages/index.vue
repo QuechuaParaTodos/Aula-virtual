@@ -5,3 +5,14 @@
     </v-col>
   </v-row>
 </template>
+
+<script>
+export default {
+  //layout: 'error',
+}
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>

@@ -9,6 +9,7 @@
   transition: $--transition;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: $--shadow1;
   @media screen and (min-width: 600px) {
     padding: .3rem .8rem;
   }
@@ -16,6 +17,7 @@
     padding: .4rem 1rem;
   }
   &:hover{
+    box-shadow: $--shadow2;
     background: $--clr--primary-dark;
     color: $--clr--white;
   }
