@@ -4,7 +4,11 @@
       <v-divider class="hr-line"></v-divider>
       <div class="error-wrapper">
         <div class="apu-container">
-          <h1>{{ apuBigTextMessage }}</h1><img src="~assets/ApuTriste.png" alt="apu triste">
+          <h1>{{ apuBigTextMessage }}</h1>
+          <v-img
+            src="img/ApuTriste.png"
+            max-width="272"
+          ></v-img>
         </div>
         <div class="subtext-container">
           <h1 v-if="error.statusCode === 404">
@@ -76,7 +80,8 @@ export default {
   font-weight: bold;
 }
 
-.apu-container img {
+.apu-container .v-image {
+  display: inline-block;
   margin-bottom: -40px;
 }
 
