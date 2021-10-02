@@ -1,93 +1,92 @@
-.btn {
-  cursor:pointer;
-  width:auto;
-  padding: .2rem .6rem;
-  border-radius:10px;
-  border:1px solid $--clr--primary;
-  background: $--clr--primary;
-  color: $--clr--white;
-  transition: $--transition;
-  font-weight: 500;
-  font-size: 14px;
-  box-shadow: $--shadow1;
-  @media screen and (min-width: 600px) {
-    padding: .3rem .8rem;
-  }
-  @media screen and (min-width: 900px) {
-    padding: .4rem 1rem;
-  }
-  &:hover{
-    box-shadow: $--shadow2;
-    background: $--clr--primary-dark;
+z.btn {
+    cursor: pointer;
+    width: auto;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    border: 1px solid $--clr--primary;
+    background: $--clr--primary;
     color: $--clr--white;
-  }
+    transition: $--transition;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: $--shadow1;
+    @media screen and (min-width: 600px) {
+        padding: 0.3rem 0.8rem;
+    }
+    @media screen and (min-width: 900px) {
+        padding: 0.4rem 1rem;
+    }
+    &:hover {
+        box-shadow: $--shadow2;
+        background: $--clr--primary-dark;
+        color: $--clr--white;
+    }
 }
 .btn-white {
-  background: $--clr--white;
-  color: $--clr--primary;
-  &:hover{
-    background: #fbf8fc;
-    color: $--clr--primary-dark;
-  }
+    background: $--clr--white;
+    color: $--clr--primary;
+    &:hover {
+        background: #fbf8fc;
+        color: $--clr--primary-dark;
+    }
 }
-.section{
-  padding: 2rem 0;
+.section {
+    padding: 2rem 0;
 }
 
-
-.section-center{
-  width: 98vw;
-  margin: 0 auto;
-  max-width: 1100px;
+.section-center {
+    width: 98vw;
+    margin: 0 auto;
+    max-width: 1100px;
 }
 @media screen and (min-width: 600px) {
-  .section{
-    padding: 3rem 0;
-  }
-  .section-center{
-    width: 90vw;
-  }
+    .section {
+        padding: 3rem 0;
+    }
+    .section-center {
+        width: 90vw;
+    }
 }
 @media screen and (min-width: 900px) {
-  .section-center{
-    width: 80vw;
-  }
+    .section-center {
+        width: 80vw;
+    }
 }
 @media screen and (min-width: 1080px) {
-  .section{
-    padding: 4rem 0;
-  }
-  .section-center{
-    max-width: 1170px;
-  }
+    .section {
+        padding: 4rem 0;
+    }
+    .section-center {
+        max-width: 1170px;
+    }
 }
 @media screen and (min-width: 992px) {
-  .section-center{
-    width: 90vw;
-  }
+    .section-center {
+        width: 90vw;
+    }
 }
 
 @media screen and (min-width: 900px) {
-    h1{
-      font-size: 20px;
+    h1 {
+        font-size: 20px;
     }
-  h2{
-    font-size: 18px;
-  }
-  h3{
-    font-size: 16px;
-  }
-  h4{
-    font-size: 15px;
-  }
-  h5{
-    font-size: 13px;
-  }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 15px;
+    }
+    h5 {
+        font-size: 13px;
+    }
 }
 
-p{
-  font-size: 14px;
-  @media screen and (min-width: 600px) {
-      font-size: 16px;
-  }
+p {
+    font-size: 14px;
+    @media screen and (min-width: 600px) {
+        font-size: 16px;
+    }
 }
