@@ -26,6 +26,10 @@ export default {
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [],
 
+    styleResources: {
+        scss: ["@/assets/style.scss"]
+    },
+
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
 
@@ -39,32 +43,11 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: [],
+    modules: ["@nuxtjs/style-resources"],
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
-        customVariables: ["~/assets/style.scss"],
-        theme: {
-            dark: false,
-            themes: {
-                light: {
-                    purple1: "#8D33A3",
-                    purple2: "#702283",
-                    purple3: "#BA77CA",
-                    orange1: "#F7A600",
-                    orange2: "#DB9300",
-                    orange3: "#FFC652",
-                    success: "#00A351",
-                    danger: "#D73526",
-                    warning: "#F7A600",
-                    info: "#4AA0AF",
-                    grey100: "#C4C4C4",
-                    grey200: "#939393",
-                    black: "#393939",
-                    white: "#FFFEFD"
-                }
-            }
-        }
+        optionsPath: "./vuetify.options.js"
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build

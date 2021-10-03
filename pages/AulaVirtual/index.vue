@@ -1,5 +1,7 @@
 <template>
-    <v-container fluid> </v-container>
+    <v-container fluid>
+        <v-icon>$vuetify.icons.play</v-icon>
+    </v-container>
 </template>
 
 <script>
