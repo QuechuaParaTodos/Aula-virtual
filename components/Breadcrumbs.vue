@@ -6,14 +6,12 @@
       </template>
     </v-breadcrumbs>
     <div class="mt-2">
-        <img height="30" alt="icons hand" src="../assets/icons/hand.svg">
+        <img height="30" alt="icons hand" src="/icons/hand.svg">
     </div>
     </div>
 </template>
 
 <script>
- 
-
   export default {
     name: "Breadcrumbs",
       data: () => ({
@@ -27,7 +25,7 @@
         },
         {
           text: 'Lección 1: Imaynallam Kachkanki? ¿Cómo estás?',
-          disabled: true,
+          disabled: false,
           href: 'breadcrumbs_link_1',
           
         },
