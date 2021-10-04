@@ -17,9 +17,7 @@
           <h1 v-else>
             {{ otherError }}
           </h1>
-          <NuxtLink to="/">
-            Regresar
-          </NuxtLink>
+          <a @click="goBack">Regresar</a>
         </div>
       </div>
     </v-main>
@@ -42,6 +40,11 @@ export default {
       otherError: 'An error occurred'
     }
   },
+  methods: {
+    goBack() {
+      return window.history.length > 1 ? this.$router.back() : this.$router.replace('/')
+    }
+  },
   head () {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
@@ -52,7 +55,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .error-page {
   background-color: #FFFEFD;
 }
