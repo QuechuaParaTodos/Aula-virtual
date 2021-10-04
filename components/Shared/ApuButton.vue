@@ -1,7 +1,7 @@
 <template>
     <div class="btn-container chakana-shape">
         <button @click="onClick" plain outlined class="btn-chakana chakana-shape">
-            {{ textButton }}
+            <slot></slot>
         </button>
     </div>
 </template>
@@ -9,12 +9,6 @@
 <script>
 export default {
     inheritAttrs: true,
-    props: {
-        textButton: {
-            type: String,
-            default: "Apu Button"
-        }
-    },
     methods: {
         onClick() {
             this.$emit("click");
@@ -35,16 +29,17 @@ $btn-hover-text-color: $chakana-alt-style-color;
 $edge-width: 6px;
 
 .btn-container {
-    display: inline-block;
     background: $btn-border-color;
     border: 2px solid $btn-border-color;
+    display: inline-block;
 }
 
 .btn-chakana {
     background: $btn-background-color;
-    color: $btn-text-color;
-    padding: 4px 20px;
     border: none;
+    color: $btn-text-color;
+    font-weight: bold;
+    padding: 4px 50px;
 
     &:hover {
         background: $btn-hover-background-color;

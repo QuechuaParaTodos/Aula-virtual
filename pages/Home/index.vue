@@ -1,7 +1,7 @@
 <template>
     <div>
         home
-        <p><ApuButton @click="showAlert" textButton="iniciar sesión" /></p>
+        <p><ApuButton @click="showAlert">iniciar sesión</ApuButton></p>
     </div>
 </template>
 
