@@ -1,4 +1,6 @@
-import IconPlay from "~/components/Icons/IconPlay";
+import IconVideos from "~/components/Icons/IconVideos";
+import IconActividades from "~/components/Icons/IconActividades";
+import IconMaterialAdicional from "~/components/Icons/IconMaterialAdicional";
 
 export default function() {
     return {
@@ -26,8 +28,14 @@ export default function() {
         },
         icons: {
             values: {
-                play: {
-                    component: IconPlay
+                videos: {
+                    component: IconVideos
+                },
+                actividades: {
+                    component: IconActividades
+                },
+                material: {
+                    component: IconMaterialAdicional
                 }
             }
         }

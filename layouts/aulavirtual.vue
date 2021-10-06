@@ -1,9 +1,8 @@
 <template>
     <v-app>
-        <p>Header de Aula virtual</p>
+        <Header />
         <v-main>
             <v-container class="d-flex flex-row pa-0 container__height" fluid>
-                <SidebarLeft />
                 <Nuxt />
             </v-container>
         </v-main>
@@ -11,10 +10,12 @@
 </template>
 
 <script>
+import Header from "../components/AulaVirtual/Header";
 import SidebarLeft from "../components/AulaVirtual/SidebarLeft";
 
 export default {
     components: {
+        Header,
         SidebarLeft
     },
     data: () => ({})

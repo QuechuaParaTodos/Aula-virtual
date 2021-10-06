@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <v-icon>$vuetify.icons.play</v-icon>
+        <h1>Aula virtual - Home</h1>
     </v-container>
 </template>
 
@@ -9,8 +9,6 @@ export default {
     head: {
         title: "Aula Virtual"
     },
-    layout: "classroom"
+    layout: "aulavirtual"
 };
 </script>
-
-<style lang="scss" scoped></style>
