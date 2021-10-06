@@ -21,7 +21,7 @@
 
         <v-divider></v-divider>
 
-        <v-list dense>
+        <v-list dense class="pa-0">
             <SidebarLeftList
                 :title="info.videos.text"
                 :icon="info.videos.icon"
@@ -51,7 +51,7 @@ export default {
         info: {
             videos: {
                 text: "Videos",
-                icon: "mdi-play-circle-outline",
+                icon: "$vuetify.icons.videos",
                 subitems: [
                     {
                         title: "Video 1: Imaynallam Kachkanki?",
@@ -69,7 +69,7 @@ export default {
             },
             actividades: {
                 text: "Actividades",
-                icon: "mdi-book-open-blank-variant",
+                icon: "$vuetify.icons.actividades",
                 subitems: [
                     { title: "Completar", icon: "mdi-play-circle" },
                     { title: "Relacionar", icon: "mdi-play-circle" }
@@ -77,7 +77,7 @@ export default {
             },
             materialAdicional: {
                 text: "Material adicional",
-                icon: "mdi-format-list-text",
+                icon: "$vuetify.icons.material",
                 subitems: [
                     { title: "Lección 1: Ppts", icon: "mdi-play-circle" },
                     { title: "Lección 1: Pdfs", icon: "mdi-play-circle" }

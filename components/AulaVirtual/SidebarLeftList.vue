@@ -38,18 +38,18 @@ export default {
 </script>
 
 <style lang="scss">
-.v-list-group__header {
+.each__list .v-list-group__header {
     flex-direction: row-reverse;
 }
 
-.each__list__sublist {
+.each__list .each__list__sublist {
     border-top: 1px solid #c4c4c4;
     .v-list-item__title {
         white-space: inherit;
     }
 }
 
-.each__list__sublist:last-child {
+.each__list .each__list__sublist:last-child {
     border-bottom: 1px solid #c4c4c4;
 }
 </style>
