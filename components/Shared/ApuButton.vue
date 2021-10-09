@@ -1,5 +1,10 @@
 <template>
-    <v-btn v-bind="$attrs" v-on="$listeners" class="btn-chakana chakana-shape">
+    <v-btn
+        v-bind="$attrs"
+        v-on="$listeners"
+        class="btn-chakana chakana-shape"
+        :style="apuStyle"
+    >
         <slot />
     </v-btn>
 </template>
@@ -10,11 +15,35 @@ export default {
     mounted() {
         this.wrap(this.$el, this.$options._scopeId);
     },
+    props: {
+        apuColor: {
+            type: String,
+            default: "#e73324"
+        },
+        apuForeColor: {
+            type: String,
+            default: "#fff"
+        }
+    },
+    computed: {
+        apuStyle() {
+            return {
+                "--color": this.apuForeColor,
+                "--color-hover": this.apuForeColor,
+                "--background-color": this.apuColor
+            };
+        }
+    },
     methods: {
         wrap(toWrap, scopeId) {
             const wrapper = document.createElement("div");
             if (scopeId) wrapper.toggleAttribute(scopeId);
             wrapper.classList.add("btn-container", "chakana-shape");
+            wrapper.style.cssText = `
+                color:${this.apuForeColor}!important;
+                background-color:${this.apuColor}!important;
+                border: 2px solid ${this.apuColor};
+                display:inline-block`;
             toWrap.parentNode.appendChild(wrapper);
             wrapper.appendChild(toWrap);
         }
@@ -23,35 +52,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$btn-border-color: $chakana-style-color;
-$btn-text-color: $chakana-style-color;
-$btn-hover-background-color: $chakana-style-color;
 
-$btn-background-color: $chakana-alt-style-color;
-$btn-hover-text-color: $chakana-alt-style-color;
 $vertex-width: 6px;
 
 ::v-deep .v-btn__loader {
-    color: $chakana-alt-style-color;
-}
-
-.btn-container {
-    background: $btn-border-color;
-    border: 2px solid $btn-border-color;
-    display: inline-block;
+    color: var(--color);
 }
 
 .btn-chakana {
-    background: $btn-background-color;
+    background: var(--background-color) !important;
     border: none;
-    color: $btn-text-color;
+    color: var(--color) !important;
     font-weight: bold;
     height: 32px !important;
     text-transform: unset;
 
     &:hover {
-        background: $btn-hover-background-color;
-        color: $btn-hover-text-color;
+        background: var(--color-hover) !important;
+        color: var(--background-color) !important;
     }
 }
 

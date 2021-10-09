@@ -6,6 +6,8 @@
                 @click="showAlert"
                 :loading="loading"
                 :disabled="loading"
+                :apuColor="'purple'"
+                :apuForeColor="'lime'"
                 :ripple="false"
                 class="py-1 px-10"
             >
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-import ApuButton from "~/components/Shared/ApuButton.vue";
+import ApuButton from "../../components/Shared/ApuButton.vue";
 export default {
     components: {
         ApuButton
