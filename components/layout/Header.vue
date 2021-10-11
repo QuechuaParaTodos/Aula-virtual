@@ -37,7 +37,7 @@
                 :ripple="false"
                 class="py-1 px-10"
             >
-                Iniciar Sesión
+            Iniciar sesión
             </ApuButton>
                 <ApuButton
                 @click="login"
