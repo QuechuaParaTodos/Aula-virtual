@@ -1,17 +1,12 @@
 <template>
   <v-row class="d-flex flex-column" justify="center" align="center">
-    <Questions/>
+    <Landing/>
   </v-row>
 </template>
 
 <script>
-import Questions from "../components/Questions/Questions";
+import Landing from "@/components/Landing";
 export default {
-  components: {Questions},
-  data () {
-    return {
-    }
-  },
-
+  components: {Landing},
 }
 </script>
