@@ -28,14 +28,28 @@
                 </div>
             </div>
             <div class="auth">
-                <v-btn
-                    outlined
-                    :class="`${btnColor} rounded-lg mx-2`"
-                    dark
-                    @click="login"
-                    >Iniciar Sesión</v-btn
-                >
-                <button class="btn btn-white">Matricúlate</button>
+                <ApuButton
+                @click="login"
+                :loading="loading"
+                :disabled="loading"
+                apuColor="purple"
+                apuForeColor="orange"
+                :ripple="false"
+                class="py-1 px-10"
+            >
+            Iniciar sesión
+            </ApuButton>
+                <ApuButton
+                @click="login"
+                :loading="loading"
+                :disabled="loading"
+                apuColor="purple"
+                apuForeColor="orange"
+                :ripple="false"
+                class="py-1 px-10"
+            >
+                Matricúlate
+            </ApuButton>
                 <div class="bars-mobile">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -56,13 +70,21 @@
 </template>
 
 <script>
+import ApuButton from '@/components/ApuButton';
+
 export default {
+    components: {
+        ApuButton,
+    },
     data: () => ({
-        btnColor: "purple"
+        loading: false
     }),
     methods: {
         login() {
-            this.btnColor = this.btnColor == "pink" ? "purple" : "pink";
+            this.loading = true;
+            setTimeout(() => {
+                this.loading = false;
+            }, 2000);
         }
     }
 };
