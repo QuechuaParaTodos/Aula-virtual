@@ -18,60 +18,83 @@
             class="align-self-end"
         >
             <v-tab
-                to="/aulavirtual/cursos"
+                v-for="(item, i) in navbar"
+                :key="i"
+                :to="item.to"
                 :ripple="false"
                 class="px-10 font-weight-bold"
-                >Mis cursos</v-tab
-            >
-            <v-tab
-                to="/aulavirtual/diccionario"
-                :ripple="false"
-                class="px-10 font-weight-bold"
-                >Diccionario</v-tab
-            >
-            <v-tab
-                to="/aulavirtual/calendario"
-                :ripple="false"
-                class="px-10 font-weight-bold"
-                >Calendario</v-tab
+                >{{ item.text }}</v-tab
             >
         </v-tabs>
 
         <v-divider inset vertical class="mx-4"></v-divider>
 
-        <v-list class="aulavirtual__header__list align-self-end pa-0">
-            <v-list-group :value="false" prepend-icon="mdi-account-circle">
-                <template v-slot:activator>
-                    <v-list-item-title>Users</v-list-item-title>
-                </template>
-
+        <v-menu bottom offset-y>
+            <template v-slot:activator="{ on }">
+                <v-btn plain height="48px" :ripple="false" v-on="on">
+                    <v-avatar class="mr-4">
+                        <img :src="require(`~/assets/img/${user.avatar}`)" />
+                    </v-avatar>
+                    <span class="mr-4">{{ user.name }}</span>
+                    <v-icon left>
+                        mdi-chevron-down
+                    </v-icon>
+                </v-btn>
+            </template>
+            <v-card>
                 <v-list-item-group>
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-conversions</v-icon>
+                    <v-list-item v-for="(item, i) in user.items" :key="i">
+                        <v-list-item-icon class="mr-3">
+                            <v-icon>{{ item.icon }}</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title>Item 1</v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
-
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-audience</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-content>
-                            <v-list-item-title>Item 2</v-list-item-title>
+                            <v-list-item-title>{{
+                                item.text
+                            }}</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list-item-group>
-            </v-list-group>
-        </v-list>
+            </v-card>
+        </v-menu>
     </v-container>
 </template>
 
 <script>
 export default {
-    data: () => ({})
+    data: () => ({
+        navbar: [
+            {
+                to: "/aulavirtual/cursos",
+                text: "Mis cursos"
+            },
+            {
+                to: "/aulavirtual/diccionario",
+                text: "Diccionario"
+            },
+            {
+                to: "/aulavirtual/calendario",
+                text: "Calendario"
+            }
+        ],
+        user: {
+            name: "Alice Ramírez",
+            avatar: "avatar.png",
+            items: [
+                {
+                    text: "Perfil",
+                    icon: "mdi-account-circle"
+                },
+                {
+                    text: "Cursos",
+                    icon: "mdi-account-circle"
+                },
+                {
+                    text: "Cerrar sesión",
+                    icon: "mdi-logout-variant"
+                }
+            ]
+        }
+    })
 };
 </script>
 

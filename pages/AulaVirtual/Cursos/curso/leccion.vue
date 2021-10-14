@@ -6,6 +6,9 @@
 
 <script>
 export default {
+    head: {
+        title: "Lección 1"
+    },
     layout: "leccion"
 };
 </script>

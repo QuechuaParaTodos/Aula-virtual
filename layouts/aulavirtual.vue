@@ -11,12 +11,10 @@
 
 <script>
 import Header from "../components/AulaVirtual/Header";
-import SidebarLeft from "../components/AulaVirtual/SidebarLeft";
 
 export default {
     components: {
-        Header,
-        SidebarLeft
+        Header
     },
     data: () => ({})
 };
