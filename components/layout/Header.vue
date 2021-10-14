@@ -1,14 +1,14 @@
 <template>
-    <header>
+    <header data-navigation>
         <div class="section-center">
             <div class="logo">
                 <img src="/img/logo-qpt.png" alt="" />
             </div>
             <div class="links">
-                <a href="#" class="active">Conócenos</a>
-                <a href="#">Cursos</a>
-                <a href="#">Noticias</a>
-                <a href="#">Blog</a>
+                <nuxt-link :to="{ path: '/',hash:'#conocenos'}" class="active">Conócenos</nuxt-link>
+                <nuxt-link :to="{ path: '/',hash:'#cursos'}">Cursos</nuxt-link>
+                <nuxt-link :to="{ path: '/',hash:'#noticias'}">Noticias</nuxt-link>
+                <nuxt-link :to="{ path: '/',hash:'#blog'}">Blog</nuxt-link>
             </div>
             <div class="search">
                 <input type="text" placeholder="Buscar" />
