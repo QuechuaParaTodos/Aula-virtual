@@ -31,7 +31,7 @@
 
         <v-menu bottom offset-y>
             <template v-slot:activator="{ on }">
-                <v-btn plain height="48px" :ripple="false" v-on="on">
+                <v-btn plain height="100%" :ripple="false" v-on="on">
                     <v-avatar class="mr-4">
                         <img :src="require(`~/assets/img/${user.avatar}`)" />
                     </v-avatar>

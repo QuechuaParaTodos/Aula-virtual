@@ -9,12 +9,10 @@
     >
         <v-list-item class="px-2">
             <v-btn icon>
-                <v-icon>mdi-menu</v-icon>
+                <v-icon v-if="mini">mdi-chevron-right</v-icon>
             </v-btn>
-
             <v-spacer></v-spacer>
-
-            <v-btn icon @click.stop="mini = !mini">
+            <v-btn right icon @click.stop="mini = !mini">
                 <v-icon>mdi-chevron-left</v-icon>
             </v-btn>
         </v-list-item>
@@ -23,19 +21,11 @@
 
         <v-list dense class="pa-0">
             <SidebarLeftList
-                :title="info.videos.text"
-                :icon="info.videos.icon"
-                :items="info.videos.subitems"
-            />
-            <SidebarLeftList
-                :title="info.actividades.text"
-                :icon="info.actividades.icon"
-                :items="info.actividades.subitems"
-            />
-            <SidebarLeftList
-                :title="info.materialAdicional.text"
-                :icon="info.materialAdicional.icon"
-                :items="info.materialAdicional.subitems"
+                v-for="(item, i) in info"
+                :key="i"
+                :title="item.text"
+                :icon="item.icon"
+                :items="item.subitems"
             />
         </v-list>
     </v-navigation-drawer>
