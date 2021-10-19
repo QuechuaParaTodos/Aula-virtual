@@ -22,7 +22,7 @@
                 <v-list-item-content>
                     <Notes @click="handleSave" />
                     <v-divider class="my-2"></v-divider>
-                    <Dictionary @click="handleSearch" />
+                    <Dictionary @click="handleSearch" :results="results" />
                 </v-list-item-content>
             </v-list-item>
         </v-list>
@@ -71,8 +71,22 @@ export default {
                         translate_example: "Xxxxx xxx xxxxxx"
                     }
                 ]
+            },
+            {
+                word: "inti",
+                meanings: [
+                    {
+                        meaning: "Sol",
+                        grammatical_category: "xxx",
+                        origin: "",
+                        equivalent: "",
+                        oringin_example: "Xxxxxx xxxxxx",
+                        translate_example: "Xxxxx xxx xxxxxx"
+                    }
+                ]
             }
-        ]
+        ],
+        results: ""
     }),
     components: {
         Notes,
@@ -83,10 +97,13 @@ export default {
             console.log(note);
         },
         handleSearch(wordSearched) {
-            const search = this.dictionary.filter(word => {
-                word.word === wordSearched;
+            this.dictionary.filter(word => {
+                if (word.word === wordSearched) {
+                    this.results = word.meanings[0].meaning;
+                } else {
+                    this.results = "La palabra no existe";
+                }
             });
-            console.log(search);
         }
     }
 };

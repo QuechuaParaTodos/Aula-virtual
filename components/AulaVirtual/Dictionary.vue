@@ -26,7 +26,6 @@
             ></v-text-field>
             <v-btn
                 height="40"
-                flat
                 depressed
                 class="btn__search"
                 @click="handleSearch"
@@ -43,9 +42,11 @@
 <script>
 export default {
     data: () => ({
-        word: "",
-        results: ""
+        word: ""
     }),
+    props: {
+        results: String
+    },
     methods: {
         handleSearch() {
             this.$emit("click", this.word);
