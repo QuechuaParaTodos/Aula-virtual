@@ -1,6 +1,6 @@
 <template>
     <v-container
-        class="d-flex flex-row align-center px-16 py-0 aulavirtual__header"
+        class="d-flex flex-row align-center px-3 px-md-16 py-0 aulavirtual__header"
         fluid
     >
         <img
