@@ -1,0 +1,23 @@
+{
+    "origin_language": "quechua ayacuchano",
+    "translate_language": "castellano",
+    "word": "chaki",
+    "meanings": [
+        {
+            "meaning": "Pie",
+            "grammatical_category": "s",
+            "origin": "",
+            "equivalent": "",
+            "oringin_example": "Chakiykiqa sumaqmi",
+            "translate_example": "Tus pies son hermosos"
+        },
+        {
+            "meaning": "seco(a)",
+            "grammatical_category": "adj",
+            "origin": "",
+            "equivalent": "",
+            "oringin_example": "Aychaqa chakiñam kachkan",
+            "translate_example": "La carne ya está seca"
+        }
+    ]
+}
