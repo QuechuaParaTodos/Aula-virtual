@@ -2,9 +2,9 @@
   <v-app light>
     <Header/>
     <v-main>
-      <v-container>
+      <!-- <v-container> -->
         <Nuxt />
-      </v-container>
+      <!-- </v-container> -->
     </v-main>
     <Footer/>
   </v-app>

@@ -1,13 +1,12 @@
 <template>
-    <v-container class="mt-12">
+    <v-container class="my-12">
         <v-row >
             <v-col class="c-bg-form text-center" xs="12" sm="10" offset-sm="1" md="8" offset-md="2">
                 <v-container>
                     <v-row>
                         <v-col xs="12" sm="8" md="6" offset-sm="2" offset-md="3">
-                            <p class="mb-0">Iniciar sesión</p>
+                            <p class="mb-0">Regístrate</p>
                             <img src="@/assets/img/apu-perfil.png" alt="Apu Perfil" />
-                            <p class="mb-0">Bienvenido(a)</p>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -26,9 +25,33 @@
                             </v-col>
                         </v-row>
                         <v-row>
+                            <v-col xs="12" sm="8" md="8" offset-sm="2" offset-md="2">
+                                <v-text-field dense class="c-height" v-model="email" :rules="emailRules" label="Email"
+                                    outlined></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col xs="12" sm="8" md="8" offset-sm="2" offset-md="2">
+                                <v-text-field dense class="c-height" v-model="password" :rules="passwordRules"
+                                    label="Contraseña" outlined type="password"></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col xs="12" sm="8" md="8" offset-sm="2" offset-md="2">
+                                <v-text-field dense class="c-height" v-model="email" :rules="emailRules" label="Email"
+                                    outlined></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col xs="12" sm="8" md="8" offset-sm="2" offset-md="2">
+                                <v-text-field dense class="c-height" v-model="password" :rules="passwordRules"
+                                    label="Contraseña" outlined type="password"></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
                             <v-col xs="12" sm="8" md="6" offset-sm="2" offset-md="3">
                                 <ApuButton :disabled="!valid" :loading="loading" @click="validate" apuColor="purple"
-                                    apuForeColor="orange" class="px-10">Ingresar</ApuButton>
+                                    apuForeColor="orange" class="px-10">Registrarte</ApuButton>
                             </v-col>
                         </v-row>
                     </v-container>
@@ -42,12 +65,12 @@
                             </div> -->
                             <div class="c-split"></div>
                             <p class="mb-0 mt-4">
-                                <a href="#" class="c-link-black">Aún no eres estudiante?</a>
+                                <a href="#" class="c-link-black">Ya tienes una cuenta?</a>
                             </p>
                             <p>
-                                <nuxt-link to="/SignIn" class="c-link-purple">
-                                   Regístrate
-                                </nuxt-link >
+                                <nuxt-link to="/Login" class="c-link-purple">
+                                    Inicia sesión
+                                </nuxt-link>
                             </p>
                         </v-col>
                     </v-row>
@@ -55,13 +78,12 @@
             </v-col>
         </v-row>
     </v-container>
-    </div>
 </template>
 
 <script>
 import ApuButton from '../../components/ApuButton.vue';
 export default {
-    name: 'Login',
+    name: 'SignIn',
     components: { ApuButton },
     data: () => ({
         valid: false,

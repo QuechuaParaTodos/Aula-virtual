@@ -4,6 +4,7 @@
         v-on="$listeners"
         class="btn-chakana chakana-shape"
         :style="apuStyle"
+        :disabled="disabled"
     >
         <slot />
     </v-btn>
@@ -23,6 +24,10 @@ export default {
         apuForeColor: {
             type: String,
             default: "#fff"
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {

@@ -1,67 +1,42 @@
 <template>
     <header data-navigation>
         <div class="section-center">
-            <div class="logo">
-                <img src="/img/logo-qpt.png" alt="" />
-            </div>
+            <nuxt-link to="/">
+                <div class="logo">
+                    <img src="/img/logo-qpt.png" alt="" />
+                </div>
+            </nuxt-link>
+
             <div class="links">
-                <nuxt-link :to="{ path: '/',hash:'#conocenos'}" class="active">Conócenos</nuxt-link>
-                <nuxt-link :to="{ path: '/',hash:'#cursos'}">Cursos</nuxt-link>
-                <nuxt-link :to="{ path: '/',hash:'#noticias'}">Noticias</nuxt-link>
-                <nuxt-link :to="{ path: '/',hash:'#blog'}">Blog</nuxt-link>
+                <nuxt-link :to="{ path: '/', hash: '#conocenos' }" class="active">Conócenos</nuxt-link>
+                <nuxt-link :to="{ path: '/', hash: '#cursos' }">Cursos</nuxt-link>
+                <nuxt-link :to="{ path: '/', hash: '#noticias' }">Noticias</nuxt-link>
+                <nuxt-link :to="{ path: '/', hash: '#blog' }">Blog</nuxt-link>
             </div>
             <div class="search">
-                <input type="text" placeholder="Buscar" />
+                <!-- <input type="text" placeholder="Buscar" />
                 <div class="icon">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                    >
-                        <path
-                            fillRule="evenodd"
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
                             d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                            clipRule="evenodd"
-                        />
+                            clipRule="evenodd" />
                     </svg>
-                </div>
+                </div> -->
             </div>
-            <div class="auth">
-                <ApuButton
-                @click="login"
-                :loading="loading"
-                :disabled="loading"
-                apuColor="purple"
-                apuForeColor="orange"
-                :ripple="false"
-                class="py-1 px-10"
-            >
-            Iniciar sesión
-            </ApuButton>
-                <ApuButton
-                @click="login"
-                :loading="loading"
-                :disabled="loading"
-                apuColor="purple"
-                apuForeColor="orange"
-                :ripple="false"
-                class="py-1 px-10"
-            >
-                Matricúlate
-            </ApuButton>
+            <div class="auth d-flex">
+                <ApuButton @click="login" :loading="loading" :disabled="loading" apuColor="purple" apuForeColor="orange"
+                    :ripple="false" class="py-1 px-10">
+                    Iniciar sesión
+                </ApuButton>
+                <ApuButton @click="signin" :loading="loading" :disabled="loading" apuColor="purple" apuForeColor="orange"
+                    :ripple="false" class="py-1 px-10">
+                   Regístrate
+                </ApuButton>
                 <div class="bars-mobile">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                    >
-                        <path
-                            fillRule="evenodd"
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                            clipRule="evenodd"
-                        />
+                            clipRule="evenodd" />
                     </svg>
                 </div>
             </div>
@@ -71,6 +46,7 @@
 
 <script>
 import ApuButton from '@/components/ApuButton';
+import { sign } from 'crypto';
 
 export default {
     components: {
@@ -81,10 +57,10 @@ export default {
     }),
     methods: {
         login() {
-            this.loading = true;
-            setTimeout(() => {
-                this.loading = false;
-            }, 2000);
+            this.$router.push({ name: 'Login' })
+        },
+        signin() {
+            this.$router.push({ name: 'SignIn' })
         }
     }
 };
@@ -93,21 +69,26 @@ export default {
 <style lang="scss" scoped>
 header {
     border-bottom: 3px solid $--clr--primary;
+
     .section-center {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 0.3rem auto;
+
         .logo {
             img {
                 width: 140px;
             }
         }
+
         .links {
             display: none;
+
             @media screen and (min-width: 1000px) {
                 display: flex;
             }
+
             a {
                 color: $--clr-black-1;
                 font-weight: 500;
@@ -115,16 +96,19 @@ header {
                 border-bottom: 2px solid transparent;
                 transition: $--transition;
                 margin: 0 0.5rem;
+
                 &:hover {
                     color: $--clr--primary;
                     border-bottom: 2px solid $--clr--primary;
                 }
             }
+
             .active {
                 color: $--clr--primary;
                 border-bottom: 2px solid $--clr--primary;
             }
         }
+
         .search {
             display: none;
             align-items: center;
@@ -132,55 +116,69 @@ header {
 
             border-radius: 10px;
             overflow: hidden;
+
             @media screen and (min-width: 700px) {
                 display: flex;
             }
+
             input {
                 width: 220px;
                 padding: 0.1rem 0.5rem;
+
                 &:focus {
                     outline: none;
                 }
             }
+
             .icon {
                 border-left: 2px solid $--clr--primary;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 padding: 0.2rem 0.3rem;
+
                 svg {
                     height: 26px;
                     width: 26px;
+
                     path {
                         fill: $--clr--primary;
                     }
                 }
             }
         }
+
         .auth {
             margin-right: 1rem;
             display: flex;
             align-items: center;
+
             @media screen and (min-width: 700px) {
                 margin-right: 0;
             }
+
             .btn-white {
                 display: none;
+
                 @media screen and (min-width: 700px) {
                     display: flex;
                     margin-left: 0.5rem;
                 }
             }
+
             .bars-mobile {
                 width: 24px;
                 display: flex;
                 align-items: center;
                 margin-left: 0.3rem;
+
                 @media screen and (min-width: 1000px) {
                     display: none;
                 }
+
                 svg {
                     cursor: pointer;
+
                     path {
                         fill: $--clr--primary;
                     }

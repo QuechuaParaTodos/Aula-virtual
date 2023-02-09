@@ -61,7 +61,7 @@ import Comments from "./Comments";
   };
 </script>
 
-<style>
+<style scoped>
     .container{
         width: 87%;
     }

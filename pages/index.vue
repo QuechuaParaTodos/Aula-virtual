@@ -1,7 +1,7 @@
 <template>
-  <v-row class="d-flex flex-column" justify="center" align="center">
+  <div class="d-flex flex-column">
     <Landing/>
-  </v-row>
+  </div>
 </template>
 
 <script>
